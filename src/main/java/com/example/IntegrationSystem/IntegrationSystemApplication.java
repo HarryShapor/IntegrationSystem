@@ -8,6 +8,9 @@ public class IntegrationSystemApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(IntegrationSystemApplication.class, args);
+
+
+
     }
 
 }
