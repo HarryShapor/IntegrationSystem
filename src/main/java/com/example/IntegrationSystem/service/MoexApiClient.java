@@ -29,13 +29,11 @@ public class MoexApiClient {
                 getRequest(URL),
                 HttpResponse.BodyHandlers.ofString()
         );
-
         if (response.statusCode() == 200){
             String json = response.body();
             return json;
         }
-
-        return "Ошибка HTTP: " + response.statusCode();
+        return "Error HTTP: " + response.statusCode();
     }
 
 }

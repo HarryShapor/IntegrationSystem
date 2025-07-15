@@ -21,8 +21,6 @@ public class ParserService {
             String tradedate = sharesArray.get(3).asText();
 
             Quote quote = new Quote(marketName, value, volume, tradedate);
-
-            System.out.println(quote.toString());
             return quote;
         }
         else {

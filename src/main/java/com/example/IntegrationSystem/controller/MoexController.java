@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 @RestController
+@RequestMapping("/quotes")
 public class MoexController {
 
     private final MoexApiClient moexApiClient;
@@ -39,14 +41,8 @@ public class MoexController {
         return data;
     }
 
-//    public String parse(String data) throws JsonProcessingException {
-//        ObjectMapper mapper = new ObjectMapper();
-//        JsonNode rootNode = mapper.readTree(data);
-//        parserService.parse(rootNode);
-//        return parserService.parse(rootNode).toString();
-//    }
 
-    @GetMapping("/quotes/save")
+    @GetMapping("/save")
     public ResponseEntity<String> saveQuotesForMonth(@RequestParam int year, @RequestParam int month) {
         YearMonth ym = YearMonth.of(year, month);
         List<String> secids = List.of("SBER", "YNDX", "GAZP");
@@ -82,10 +78,10 @@ public class MoexController {
     }
 
 
-    @PostConstruct
-    public void init() throws IOException, InterruptedException {
-        this.saveQuotesForMonth(2023, 10);
-    }
+//    @PostConstruct
+//    public void init() throws IOException, InterruptedException {
+//        this.saveQuotesForMonth(2023, 10);
+//    }
 
 }
 

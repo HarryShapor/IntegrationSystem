@@ -1,0 +1,6 @@
+com\example\IntegrationSystem\controller\MoexController.class
+com\example\IntegrationSystem\IntegrationSystemApplication.class
+com\example\IntegrationSystem\service\ParserService.class
+com\example\IntegrationSystem\service\MoexApiClient.class
+com\example\IntegrationSystem\service\QuoteFileService.class
+com\example\IntegrationSystem\model\Quote.class
